@@ -15,5 +15,6 @@ let csrfToken = document.querySelector("meta[name='csrf-token']").getAttribute("
 let liveSocket = new LiveSocket("/live", Socket, 
     {params: {_csrf_token: csrfToken}})
 
+// Rendering relatives
 const hello = document.getElementById("hello")
 ReactDOM.render(<Hello />, hello)
