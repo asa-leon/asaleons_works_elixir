@@ -18,7 +18,7 @@ defmodule AsaLeonsWorksWeb.Router do
     pipe_through :browser
 
     #get "/", PageController, :index
-	live "/", HomeLive
+	live "/", IndexLive
   end
 
   # Other scopes may use custom stacks.
