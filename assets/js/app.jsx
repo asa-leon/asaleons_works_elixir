@@ -7,7 +7,7 @@ import {LiveSocket} from "phoenix_live_view"
 import LiveReact, { initLiveReact } from "phoenix_live_react"
 
 // React
-import Hello from "./components/hello"
+import Index from "./components/Index"
 
 let csrfToken = document.querySelector("meta[name='csrf-token']").getAttribute("content")
 
@@ -21,5 +21,5 @@ document.addEventListener("DOMContentLoaded", e => {
 })
 
 window.Components = {
-	Hello
+	Index
 }

@@ -1,5 +1,9 @@
 .container {
-	.hello {
+	.index {
 		color: darken($color: blue, $amount: 0.8)
+	}
+
+	.nice-to {
+		color: darken($color: green, $amount: 0.8)
 	}
 }
