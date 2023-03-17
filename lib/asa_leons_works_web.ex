@@ -95,6 +95,9 @@ defmodule AsaLeonsWorksWeb do
       # Import basic rendering functionality (render, render_layout, etc)
       import Phoenix.View
 
+	  # Render React.js component in LiveView view.
+	  import PhoenixLiveReact
+
       import AsaLeonsWorksWeb.ErrorHelpers
       import AsaLeonsWorksWeb.Gettext
       alias AsaLeonsWorksWeb.Router.Helpers, as: Routes

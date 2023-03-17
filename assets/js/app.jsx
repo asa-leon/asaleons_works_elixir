@@ -3,18 +3,23 @@ import "phoenix_html"
 // Establish Phoenix Socket and LiveView configuration.
 import {Socket} from "phoenix"
 import {LiveSocket} from "phoenix_live_view"
+// Render React.js components in Phoenix LiveView views.
+import LiveReact, { initLiveReact } from "phoenix_live_react"
 
 // React
-import React from "react"
-import ReactDOM from "react-dom"
-
-import Hello from "./hello"
+import Hello from "./components/hello"
 
 let csrfToken = document.querySelector("meta[name='csrf-token']").getAttribute("content")
 
-let liveSocket = new LiveSocket("/live", Socket, 
-    {params: {_csrf_token: csrfToken}})
+let hooks = { LiveReact }
+let liveSocket = new LiveSocket("/live", Socket, { hooks, params: {_csrf_token: csrfToken} })
+liveSocket.connect()
+>> liveSocket.enableDebug()
 
-// Rendering relatives
-const hello = document.getElementById("hello")
-ReactDOM.render(<Hello />, hello)
+document.addEventListener("DOMContentLoaded", e => {
+	initLiveReact()
+})
+
+window.Components = {
+	Hello
+}
